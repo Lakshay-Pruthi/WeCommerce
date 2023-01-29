@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+  <link rel="icon" type="image/x-icon" href="/images/Shop-Icon.png">
+  <title>The Grocery Shop</title>
+  <style>
+    #area-example-13 {
+      height: 370px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    #bar-example-7 {
+      height: 350px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="flex items-center justify-between flex-wrap bg-[#18d8d9] px-3">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <img id="logo" class="w-[80px] p-[10px]" src="images/Shop-Icon.png" alt="">
+      <span class="font-semibold text-xl tracking-tight">The Grocery shop</span>
+    </div>
+    <div class="block lg:hidden">
+      <button
+        class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+        </svg>
+      </button>
+    </div>
+    <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="text-sm lg:flex-grow">
+        <a href="/Home" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          Dashboard
+        </a>
+        <a href="/Products" onclick="LoadProd()"
+          class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          Products
+        </a>
+        <a href="/Orders" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          Orders
+        </a>
+        <a href="/Revenue" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
+          Revenue
+        </a>
+      </div>
+      <div class="flex w-50 items-center">
+        <img src="images/notificationIcon.png" class="w-7 h-7 mr-3" alt="">
+        <a href="/visitSite"
+          class="flex items-center text-sm px-4 py-2 leading-none border rounded text-white  hover:border-white  mt-4 lg:mt-0">
+          Visit Site</a>
+      </div>
+    </div>
+  </nav>
+
+  <h1 class="text-[25px] text-[#18d8d9] p-2 px-6 font-bold">Dashboard</h1>
+  <div class="flex justify-evenly py-8">
+    <div class="max-w-sm rounded overflow-hidden shadow-xl h-56 bg-[#ef6060] text-white">
+      <div class="px-6 py-4">
+        <div class="font-bold text-[50px] mb-1 ">Visits</div>
+        <p class="text-[35px] text-yellow-100">1895270</p>
+        <img class="w-12" src="images/graphLine.png" alt="Sunset in the mountains">
+        <p>Increased by 50%</p>
+      </div>
+    </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-xl h-56 bg-[#fca03e] text-white">
+      <div class="px-6 py-4">
+        <div class="font-bold text-[50px] mb-1 ">Orders</div>
+        <p class="text-[35px] text-yellow-100">27589</p>
+        <img class="w-12" src="images/graphLine.png" alt="Sunset in the mountains">
+        <p>Increased by 80%</p>
+      </div>
+    </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-xl h-56 bg-[#18d8d9] text-white">
+      <div class="px-6 py-4">
+        <div class="font-bold text-[50px] mb-1">Revenue</div>
+        <p class="text-[35px] text-yellow-100">$770K</p>
+        <img class="w-12" src="images/graphLine.png" alt="Sunset in the mountains">
+        <p>Increased by 40%</p>
+      </div>
+    </div>
+    <div class="max-w-sm rounded overflow-hidden shadow-xl h-56 bg-[#ff0c4d] text-white">
+      <div class="px-6 py-4">
+        <div class="font-bold text-[50px] mb-1 ">Customers</div>
+        <p class="text-[35px] text-yellow-100">548924</p>
+        <img class="w-12" src="images/graphLine.png" alt="Sunset in the mountains">
+        <p>Increased by 30%</p>
+      </div>
+    </div>
+
+  </div>
+  <div class="flex justify-evenly items-center shadow-xl shadow-outline">
+    <table id="area-example-13"
+      class="shadow-xl charts-css area multiple hide-data show-labels show-primary-axis show-10-secondary-axes">
+      <caption> Area Example #13 </caption>
+      <thead>
+        <tr>
+          <th scope="col"> Year </th>
+          <th scope="col"> Progress 1 </th>
+          <th scope="col"> Progress 2 </th>
+          <th scope="col"> Progress 3 </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> 2000 </th>
+          <td style="--start:0.1; --size:0.5;"><span class="data"> 50 </span></td>
+          <td style="--start:0; --size:0.2;"><span class="data"> 20 </span></td>
+          <td style="--start:0.2; --size:0.4;"><span class="data"> 40 </span></td>
+        </tr>
+        <tr>
+          <th scope="row"> 2010 </th>
+          <td style="--start:0.5; --size:0.8;"><span class="data"> 80 </span></td>
+          <td style="--start:0.2; --size:0.5;"><span class="data"> 50 </span></td>
+          <td style="--start:0.4; --size:0.1;"><span class="data"> 10 </span></td>
+        </tr>
+        <tr>
+          <th scope="row"> 2020 </th>
+          <td style="--start:0.8; --size:0.4;"><span class="data"> 40 </span></td>
+          <td style="--start:0.5; --size:0.3;"><span class="data"> 30 </span></td>
+          <td style="--start:0.1; --size:0.2;"><span class="data"> 20 </span></td>
+        </tr>
+      </tbody>
+    </table>
+    <table id="bar-example-7" class="shadow-xl charts-css bar show-labels reverse">
+      <caption> Bar Example #7 </caption>
+      <thead>
+        <tr>
+          <th scope="col"> Year </th>
+          <th scope="col"> Progress </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"> 2018 </th>
+          <td style="--size:0.2;"></td>
+        </tr>
+        <tr>
+          <th scope="row"> 2019 </th>
+          <td style="--size:0.4;"></td>
+        </tr>
+        <tr>
+          <th scope="row"> 2020 </th>
+          <td style="--size:0.6;"></td>
+        </tr>
+        <tr>
+          <th scope="row"> 2021 </th>
+          <td style="--size:0.8;"></td>
+        </tr>
+        <tr>
+          <th scope="row"> 2022 </th>
+          <td style="--size:1;"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+
+</html>
